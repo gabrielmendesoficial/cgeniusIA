@@ -16,8 +16,8 @@ Os custos de operação da IA incluem:
 - **Treinamento do Modelo:** Investimentos em recursos computacionais para treinar a IA.
 - **Manutenção e Atualizações:** Custos associados à atualização do modelo e manutenção contínua.
 
-## Estrutura do Banco de Dados
-O banco de dados contém as seguintes colunas, cada uma com suas respectivas funções:
+## Estrutura dos Dados
+Os dados contém as seguintes colunas, cada uma com suas respectivas funções:
 
 | Coluna                   | Descrição |
 |--------------------------|-----------|
@@ -48,7 +48,7 @@ O banco de dados contém as seguintes colunas, cada uma com suas respectivas fun
 | Idade                    | Idade do cliente |
 
 ## O que o código faz
-*(Descreva aqui o que o seu código realiza, suas funções principais, etc.)*
+
 
 ## Conclusão
 Este projeto visa revolucionar a forma como os operadores de call center interagem com os clientes, utilizando tecnologia de ponta para melhorar a eficiência e a qualidade do atendimento.
