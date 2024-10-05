@@ -49,6 +49,17 @@ Os dados contém as seguintes colunas, cada uma com suas respectivas funções:
 
 ## O que o código faz
 
+1. Processamento de Dados dos Clientes: O código lê um banco de dados contendo informações detalhadas sobre os clientes, como histórico de compras, interesses, gastos mensais, renda, profissão, e outros atributos pessoais. Esses dados são organizados em um DataFrame e usados como base para gerar abordagens personalizadas.
+
+2. Geração de Textos Personalizados: A IA analisa as informações fornecidas no banco de dados e, com base em parâmetros como interesses, faixa de idade, segmento de mercado, entre outros, cria abordagens comerciais que ajudam os operadores de call center a interagir de forma mais direcionada e relevante com cada cliente. Por exemplo, o texto sugerido pode destacar produtos que estão alinhados com os interesses do cliente ou oferecer soluções financeiras baseadas em seu perfil econômico.
+
+3. Sugestão de Produtos: Com base no histórico de compras e nos interesses do cliente, o código sugere automaticamente produtos que podem ser indicados durante o atendimento. Isso permite que os operadores ofereçam recomendações mais assertivas, maximizando as chances de conversão em vendas.
+
+4. Exportação e Visualização de Dados: O código também exporta os dados processados para datasets atualizados, facilitando sua visualização e análise futura. Além disso, ele gera gráficos e relatórios visuais, como histogramas dos interesses dos clientes ou gráficos de barras que mostram a distribuição de idade ou renda.
+
+5. Gestão de Indicadores de Desempenho: O código armazena o status de cada indicação feita pela IA, permitindo acompanhar a performance das recomendações e ajustar as estratégias de abordagem conforme necessário. Isso garante um ciclo contínuo de aprendizado e melhoria.
+
+6. Atualizações Dinâmicas: A cada interação com novos clientes, o código é capaz de atualizar dinamicamente as abordagens e sugestões de produtos com base em novos dados adquiridos, mantendo o sistema sempre alinhado com as necessidades e preferências mais atuais dos clientes.
 
 ## Conclusão
 Este projeto visa revolucionar a forma como os operadores de call center interagem com os clientes, utilizando tecnologia de ponta para melhorar a eficiência e a qualidade do atendimento.
