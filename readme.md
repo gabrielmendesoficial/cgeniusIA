@@ -7,7 +7,7 @@ O objetivo deste projeto é desenvolver uma inteligência artificial (IA) que au
 Os operadores de call center frequentemente enfrentam desafios relacionados ao tempo de resposta e à personalização do atendimento. A falta de informações consolidadas sobre os clientes pode levar a interações menos satisfatórias e à perda de oportunidades de venda. A nossa solução visa otimizar esse processo.
 
 ## Solução
-A IA utiliza um banco de dados contendo informações dos clientes, permitindo a geração automática de textos que ajudam os operadores a se comunicarem de forma mais eficiente. Por exemplo, a IA pode sugerir produtos com base nos interesses e histórico de compras do cliente, facilitando o processo de venda e aumentando a satisfação do cliente.
+A IA utiliza informações dos clientes, permitindo a geração automática de textos que ajudam os operadores a se comunicarem de forma mais eficiente. Por exemplo, a IA pode sugerir produtos com base nos interesses e histórico de compras do cliente, facilitando o processo de venda e aumentando a satisfação do cliente.
 
 ## Custos de Operação da IA
 Os custos de operação da IA incluem:
@@ -49,9 +49,9 @@ Os dados contém as seguintes colunas, cada uma com suas respectivas funções:
 
 ## O que o código faz
 
-1. Processamento de Dados dos Clientes: O código lê um banco de dados contendo informações detalhadas sobre os clientes, como histórico de compras, interesses, gastos mensais, renda, profissão, e outros atributos pessoais. Esses dados são organizados em um DataFrame e usados como base para gerar abordagens personalizadas.
+1. Processamento de Dados dos Clientes: O código lê as informações detalhadas sobre os clientes, como histórico de compras, interesses, gastos mensais, renda, profissão, e outros atributos pessoais. Esses dados são organizados em um DataFrame e usados como base para gerar abordagens personalizadas.
 
-2. Geração de Textos Personalizados: A IA analisa as informações fornecidas no banco de dados e, com base em parâmetros como interesses, faixa de idade, segmento de mercado, entre outros, cria abordagens comerciais que ajudam os operadores de call center a interagir de forma mais direcionada e relevante com cada cliente. Por exemplo, o texto sugerido pode destacar produtos que estão alinhados com os interesses do cliente ou oferecer soluções financeiras baseadas em seu perfil econômico.
+2. Geração de Textos Personalizados: A IA analisa as informações fornecidas e, com base em parâmetros como interesses, faixa de idade, segmento de mercado, entre outros, cria abordagens comerciais que ajudam os operadores de call center a interagir de forma mais direcionada e relevante com cada cliente. Por exemplo, o texto sugerido pode destacar produtos que estão alinhados com os interesses do cliente ou oferecer soluções financeiras baseadas em seu perfil econômico.
 
 3. Sugestão de Produtos: Com base no histórico de compras e nos interesses do cliente, o código sugere automaticamente produtos que podem ser indicados durante o atendimento. Isso permite que os operadores ofereçam recomendações mais assertivas, maximizando as chances de conversão em vendas.
 
