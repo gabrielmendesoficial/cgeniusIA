@@ -1,28 +1,28 @@
-# treinamento_modelo.py
 import pandas as pd
 import pickle
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import LabelEncoder
 
-# Carregando o dataset
 df = pd.read_csv('/workspaces/cgeniusIA/dataset_versions/DatasetIA_v1.1.0.csv')
 
-# Transformando dados categóricos em numéricos (ex: Segmento, Tipo_Cartao_Credito)
+# Transformando dados categóricos em numéricos
 label_encoder_segmento = LabelEncoder()
-df['Segmento'] = label_encoder_segmento.fit_transform(df['Segmento'])
-
 label_encoder_cartao = LabelEncoder()
+df['Segmento'] = label_encoder_segmento.fit_transform(df['Segmento'])
 df['Tipo_Cartao_Credito'] = label_encoder_cartao.fit_transform(df['Tipo_Cartao_Credito'])
 
 # Selecionando as colunas relevantes para o modelo
-X = df[['Gastos_Mensais', 'Renda_Mensal', 'Idade', 'Segmento', 'Tipo_Cartao_Credito']]
-y = df['Produto_Indicado']
+X = df[['ID', 'Nome', 'CPF', 'Cliente_ID', 'Produto', 'Categoria', 
+        'Data_Compra', 'Valor_Compra', 'Quantidade_Parcelas', 'Data_Última_Compra', 
+        'Segmento', 'Produto_Indicado', 'Status_Indicação', 'Interesses', 
+        'Gastos_Mensais', 'Salario', 'Tipo_Cartao_Credito', 'Gasto_Mensal_Cartao', 
+        'Viaja_Frequentemente', 'Profissao', 'Renda_Mensal', 'Dependentes', 
+        'Gênero', 'Data_Nascimento', 'Idade']]
 
-# Treinamento do modelo de recomendação (KNN)
+y = df['Produto_Indicado']
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X, y)
 
-# Salvando o modelo treinado em um arquivo .pkl
 with open('model/modelo_recomendacao.pkl', 'wb') as file:
     pickle.dump(knn, file)
 
