@@ -3,7 +3,7 @@ import pickle
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import LabelEncoder
 
-df = pd.read_csv('/workspaces/cgeniusIA/dataset_versions/DatasetIA_v1.1.0.csv')
+df = pd.read_csv('/workspaces/cgeniusIA/dataset_versions/DatasetIA_v1.2.0.csv')
 
 # Transformando dados categóricos em numéricos
 label_encoder_segmento = LabelEncoder()
