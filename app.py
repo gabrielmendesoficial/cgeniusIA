@@ -1,5 +1,6 @@
 # app.py
 import random
+import numpy as np
 import pandas as pd
 import pickle
 import streamlit as st
@@ -130,6 +131,7 @@ if cpf:
 
         interesses = cliente_info['Interesses'].values[0]
         interesses_lista = interesses.split(", ")
+        
         def gerar_porcentagens_aleatorias(n):
             random_values = [random.random() for _ in range(n)]
             soma = sum(random_values)
@@ -163,6 +165,17 @@ if cpf:
         # Preparando os dados para a previsão
         input_data = [[gastos_mensais, renda_mensal, idade, segmento_valor, tipo_cartao_valor]]
         produto_recomendado = modelo.predict(input_data)
+
+        # Exibindo gráficos
+        st.subheader('Análise Gráfica Comparativa')
+        gastos_usuarios = df['Gastos_Mensais'].values
+        media_gastos_usuarios = np.mean(gastos_usuarios)
+        gastos_cliente = cliente_info['Gastos_Mensais'].values[0]
+        fig, ax = plt.subplots()
+        ax.bar(['Gastos do Cliente', 'Média Gastos dos Outros Usuários'], [gastos_cliente, media_gastos_usuarios], color=['blue', 'orange'])
+        ax.set_ylabel('Gastos em R$')
+        ax.set_title('Comparação de Gastos Mensais')
+        st.pyplot(fig)
 
         # Exibindo o produto recomendado
         st.subheader('Recomendação de Produto:')
