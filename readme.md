@@ -1,5 +1,7 @@
 # Projeto de Assistente IA para Call Centers
 
+![Logo](https://cdn.discordapp.com/attachments/1292610820416475189/1300187723734192220/image-removebg-preview.png?ex=671fedad&is=671e9c2d&hm=0629e4e4ef73f71a6f03f8335fd4489a29f8b6bb14cc8bef3be01211271de0a9&)
+
 ## Foco do Projeto
 O objetivo deste projeto é desenvolver uma inteligência artificial (IA) que auxilia operadores de call center na geração de textos a partir de informações dos clientes. Isso permite que os operadores ofereçam um atendimento mais eficiente e personalizado.
 
