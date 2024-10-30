@@ -2,12 +2,10 @@ import streamlit as st
 import pandas as pd
 from sklearn.metrics import (classification_report)
 from sklearn.model_selection import cross_val_score, train_test_split, cross_val_predict
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
-from pycaret.classification import setup, compare_models, save_model
 import matplotlib.pyplot as plt
 
 st.set_page_config(
@@ -80,10 +78,6 @@ st.subheader('Resultados do Modelo Random Forest')
 st.write(f'Acurácia: {acuracia_rf}')
 st.dataframe(pd.DataFrame(classification_report(classes_teste, classes_encontradas_rf, output_dict=True)).transpose())
 
-clf1 = setup(data=especificacao_valores_numericos, target='Plano', session_id=123, verbose=False)
-best_model = compare_models()
-st.subheader('Melhor Modelo com PyCaret')
-st.write(best_model)
 
 
 
