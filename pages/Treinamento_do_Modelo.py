@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
+import joblib
+import matplotlib.pyplot as plt
 from sklearn.metrics import (classification_report)
 from sklearn.model_selection import cross_val_score, train_test_split, cross_val_predict
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
-import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title='Treinamento do Modelo',
@@ -27,6 +28,11 @@ entradas = especificacao_valores_numericos
 classes = especificacao_valores_numericos['Plano']
 entradas_treino, entradas_teste, classes_treino, classes_teste = train_test_split(entradas, classes, test_size=0.2, random_state=42)
 
+# Função para salvar o modelo treinado
+def salvar_modelo(modelo, nome_arquivo):
+    joblib.dump(modelo, nome_arquivo)
+    st.success(f'Modelo salvo como {nome_arquivo}')
+
 @st.cache_data
 def treinar_modelo(entradas_treino, classes_treino):
     modelo_et = ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0,
@@ -40,14 +46,11 @@ def treinar_modelo(entradas_treino, classes_treino):
     return modelo_et
 
 @st.cache_data
-def treinar_modelo_rf(entradas_treino, classes_treino):
-    modelo_rf = RandomForestClassifier(n_estimators=100, random_state=42)
-    modelo_rf.fit(entradas_treino, classes_treino)
-    return modelo_rf
-
-@st.cache_data
 def treinar_modelo_dt(entradas_treino, classes_treino):
-    modelo_dt = DecisionTreeClassifier(random_state=42)
+    modelo_dt = DecisionTreeClassifier(ccp_alpha=0.0, criterion='gini',
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       random_state=123, splitter='best')
     modelo_dt.fit(entradas_treino, classes_treino)
     return modelo_dt
 
@@ -70,18 +73,8 @@ st.subheader('Validação Cruzada (Cross-validation) - Extra Trees')
 st.write(f'Acurácias nas dobras: {cv_scores_et}')
 st.write(f'Acurácia média: {cv_scores_et.mean()}')
 
-# Treinamento e avaliação do modelo Random Forest
-modelo_rf = treinar_modelo_rf(entradas_treino, classes_treino)
-acuracia_rf, relatorio_rf = avaliar_modelo(modelo_rf, entradas_teste, classes_teste)
-
-st.subheader('Resultados do Modelo Random Forest')
-st.write(f'Acurácia: {acuracia_rf}')
-st.dataframe(pd.DataFrame(relatorio_rf).transpose())
-
-cv_scores_rf = cross_val_score(modelo_rf, entradas, classes, cv=5)
-st.subheader('Validação Cruzada (Cross-validation) - Random Forest')
-st.write(f'Acurácias nas dobras: {cv_scores_rf}')
-st.write(f'Acurácia média: {cv_scores_rf.mean()}')
+if st.button('Salvar Modelo Extra Trees'):
+    salvar_modelo(modelo_et, 'modelos/modelo_extra_trees.pkl')
 
 # Treinamento e avaliação do modelo Decision Tree
 modelo_dt = treinar_modelo_dt(entradas_treino, classes_treino)
@@ -95,3 +88,6 @@ cv_scores_dt = cross_val_score(modelo_dt, entradas, classes, cv=5)
 st.subheader('Validação Cruzada (Cross-validation) - Decision Tree')
 st.write(f'Acurácias nas dobras: {cv_scores_dt}')
 st.write(f'Acurácia média: {cv_scores_dt.mean()}')
+
+if st.button('Salvar Modelo Decision Tree'):
+    salvar_modelo(modelo_et, 'modelos/modelo_decision_tree.pkl')
