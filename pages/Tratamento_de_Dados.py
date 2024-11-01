@@ -1,9 +1,6 @@
-from matplotlib import pyplot as plt
 import streamlit as st
 import pandas as pd
-import seaborn as sns
 import plotly.express as px
-import plotly.graph_objects as go
 from sklearn.preprocessing import OneHotEncoder
 
 def configurar_pagina():
@@ -166,39 +163,39 @@ def exibir_analise():
     """)
 
     st.write("""
-    #### Correlacao Forte entre Gastos Mensais e Salario:
-    - A correlacao entre Gastos Mensais e Salario e muito alta (0.92), indicando que pessoas com salarios mais altos tendem a ter gastos mensais mais altos.
+    #### Correlação Forte entre Gastos Mensais e Salário:
+    - A correlação entre Gastos Mensais e Salário é muito alta (0.92), indicando que pessoas com salários mais altos tendem a ter gastos mensais mais altos.
     """)
 
     st.write("""
-    #### Correlacao entre Gastos Mensais e Gasto Mensal no Cartao:
-    - A correlacao entre Gastos Mensais e Gasto Mensal Cartao e moderada (0.69), sugerindo que uma parte significativa dos gastos mensais pode ser feita atraves do cartao de credito.
+    #### Correlação entre Gastos Mensais e Gasto Mensal no Cartão:
+    - A correlação entre Gastos Mensais e Gasto Mensal Cartão é moderada (0.69), sugerindo que uma parte significativa dos gastos mensais pode ser feita através do cartão de crédito.
     """)
 
     st.write("""
-    #### Correlacao entre Salario e Renda Mensal:
-    - A correlacao entre Salario e Renda Mensal e perfeita (1.00), o que faz sentido, pois a renda mensal geralmente inclui o salario.
+    #### Correlação entre Salário e Renda Mensal:
+    - A correlação entre Salário e Renda Mensal é perfeita (1.00), o que faz sentido, pois a renda mensal geralmente inclui o salário.
     """)
 
     st.write("""
-    #### Correlacao entre Viajar Frequentemente e Outras Variaveis:
-    - Viaja Frequentemente tem correlacoes moderadas com Gastos Mensais (0.44), Salario (0.40), e Gasto Mensal Cartao (0.37). Isso sugere que pessoas que viajam frequentemente tendem a ter maiores gastos mensais, salarios e gastos no cartao.
+    #### Correlação entre Viajar Frequentemente e Outras Variáveis:
+    - Viaja Frequentemente tem correlações moderadas com Gastos Mensais (0.44), Salário (0.40), e Gasto Mensal Cartão (0.37). Isso sugere que pessoas que viajam frequentemente tendem a ter maiores gastos mensais, salários e gastos no cartão.
     """)
 
     st.write("""
-    #### Correlacao entre Planos e Gastos:
-    - Plano Plano Conexao tem uma correlacao positiva com Gastos Mensais (0.48) e Salario (0.43), indicando que pessoas com este plano tendem a ter salarios e gastos mensais mais altos.
-    - Plano Plano Serenidade tem uma correlacao negativa com Gastos Mensais (-0.34) e Salario (-0.33), sugerindo que pessoas com este plano tendem a ter salarios e gastos mensais mais baixos.
+    #### Correlação entre Planos e Gastos:
+    - Plano Plano Conexão tem uma correlação positiva com Gastos Mensais (0.48) e Salário (0.43), indicando que pessoas com este plano tendem a ter salários e gastos mensais mais altos.
+    - Plano Plano Serenidade tem uma correlação negativa com Gastos Mensais (-0.34) e Salário (-0.33), sugerindo que pessoas com este plano tendem a ter salários e gastos mensais mais baixos.
     """)
 
     st.write("""
-    #### Correlacao entre Dependentes e Outras Variaveis:
-    - Dependentes tem correlacoes muito baixas com a maioria das outras variaveis, exceto uma correlacao ligeiramente negativa com Viaja Frequentemente (-0.15). Isso pode indicar que pessoas com mais dependentes tendem a viajar menos frequentemente.
+    #### Correlação entre Dependentes e Outras Variáveis:
+    - Dependentes tem correlações muito baixas com a maioria das outras variáveis, exceto uma correlação ligeiramente negativa com Viaja Frequentemente (-0.15). Isso pode indicar que pessoas com mais dependentes tendem a viajar menos frequentemente.
     """)
 
     st.write("""
-    #### Correlacao entre Idade e Variáveis Financeiras:
-    - Idade tem correlacoes moderadas com Gastos Mensais (0.38) e Salario (0.40), sugerindo que pessoas mais velhas tendem a ter maiores salarios e gastos mensais.
+    #### Correlação entre Idade e Variáveis Financeiras:
+    - Idade tem correlações moderadas com Gastos Mensais (0.38) e Salário (0.40), sugerindo que pessoas mais velhas tendem a ter maiores salários e gastos mensais.
     """)
 
 def main():

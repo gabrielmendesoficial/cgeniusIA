@@ -1,13 +1,11 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import matplotlib.pyplot as plt
 from sklearn.metrics import (classification_report)
-from sklearn.model_selection import cross_val_score, train_test_split, cross_val_predict
+from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
+from sklearn.ensemble import ExtraTreesClassifier
 
 st.set_page_config(
     page_title='Treinamento do Modelo',
