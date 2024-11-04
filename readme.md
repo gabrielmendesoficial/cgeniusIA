@@ -1,5 +1,8 @@
 # Projeto de Assistente IA para Call Centers
 
+## Vídeo pitch
+https://youtu.be/nWgQ4H9zJhA
+
 ## Foco do Projeto
 O objetivo deste projeto é desenvolver uma inteligência artificial (IA) que auxilia operadores de call center na geração de textos a partir de informações dos clientes. Isso permite que os operadores ofereçam um atendimento mais eficiente e personalizado.
 
