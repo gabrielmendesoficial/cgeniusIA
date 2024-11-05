@@ -51,7 +51,19 @@ Os dados contém as seguintes colunas, cada uma com suas respectivas funções:
 | Idade                    | Idade do cliente |
 
 ## O que o código faz
+Este código implementa uma interface web interativa para o treinamento e avaliação de modelos de machine learning, focada na criação de uma IA para otimizar atendimentos em call centers. Usando o framework Streamlit, o código permite que os operadores visualizem, treinem, e avaliem modelos de classificação com dados pré-processados sobre clientes. O processo inclui:
 
+1. Visualização dos Dados: Exibe os dados tratados, possibilitando que os operadores compreendam melhor as características dos clientes, como perfil de gastos e interesses.
+
+2. Pré-processamento: Realiza a conversão de variáveis categóricas em valores numéricos (ex.: tipos de cartão e planos), preparando os dados para o treinamento dos modelos.
+
+3. Treinamento de Modelos: Treina dois modelos de classificação — Extra Trees e Decision Tree — utilizando um conjunto de dados dividido em treino e teste. Esse processo ajuda a prever categorias de clientes e, consequentemente, as melhores estratégias de atendimento e recomendação.
+
+4. Avaliação do Desempenho: Avalia a precisão dos modelos e gera relatórios de classificação, permitindo a comparação de diferentes algoritmos para identificar o mais eficaz no contexto de atendimento ao cliente.
+
+5. Validação Cruzada: Realiza validação cruzada para testar a estabilidade dos modelos e garantir que suas previsões se generalizam bem para novos dados.
+
+6. Salvamento de Modelos: Possibilita salvar o modelo escolhido para uso posterior em produção, garantindo que os operadores tenham acesso a modelos bem-treinados e prontos para otimizar o atendimento ao cliente.
 
 ## Conclusão
 Este projeto visa revolucionar a forma como os operadores de call center interagem com os clientes, utilizando tecnologia de ponta para melhorar a eficiência e a qualidade do atendimento.
